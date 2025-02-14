@@ -5,5 +5,5 @@ package zing
 
 // For now, we'll hardcode the repository URL.
 func GetRepositoryURL() string {
-	return "https://example.com/zinglets-repo.git" // Replace with the actual URL
+	return "https://github.com/SharkStudiosSK/zinglets-repo.git" // Replace with the actual URL
 }
