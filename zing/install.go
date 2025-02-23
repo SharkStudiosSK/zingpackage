@@ -11,15 +11,15 @@ import (
 func Install(zingletName string) error {
 	fmt.Printf("Installing zinglet: %s\n", zingletName)
 
-	// 1. Clone or update the entire zinglets repository.
-	err := CloneOrUpdate(zingletName)
+	// 1. Clone or update the specific zinglet directory.
+	err := CloneOrUpdateZinglet(zingletName)
 	if err != nil {
 		return err
 	}
 
 	// 2. Determine the path to the *zinglet's subdirectory* within the repository.
 	zingHome := os.Getenv("HOME") + "/.zing"
-	repoDir := filepath.Join(zingHome, "zinglets", "zinglets-repo")
+	repoDir := filepath.Join(zingHome, "zinglets")
 	zingletDir := filepath.Join(repoDir, zingletName)
 
 	// 3. Check if the zinglet directory exists within the repository.
